@@ -6,5 +6,3 @@ Here comes the sun according to your location.
 -sunset
 -daylight length
 
-
-sun.gif
