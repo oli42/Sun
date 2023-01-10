@@ -1,6 +1,6 @@
 # Sun
 
-Here comes the sun according to you location.
+Here comes the sun according to your location.
 
 -sunrise
 -sunset
