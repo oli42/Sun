@@ -6,4 +6,5 @@ Here comes the sun according to your location.
 -sunset
 -daylight length
 
-sun.mp4
+
+sun.gif
