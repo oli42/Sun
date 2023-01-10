@@ -1,0 +1,72 @@
+
+$gif: url(https://i.gifer.com/5EDm.gif);
+
+
+.home {
+  background-image: $gif;
+  width:100vw; 
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+.parent {
+  display: grid;
+  grid-template-columns: 890px 400px 890px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px; 
+  height: 100vh;
+  align-content: flex-end;
+
+  .div1 { grid-area: 1 / 1 / 4 / 2; 
+      background-color: none;
+  }
+  .div2 { grid-area: 1 / 2 / 2 / 3; 
+      background-color: none;
+  }
+  .div3 { grid-area: 2 / 2 / 3 / 3; 
+  
+      background-color: rgb(237, 237, 243);
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding-top: 40px; 
+
+
+      button {
+       
+        background-color: #4e4e50;
+        width: 170px;
+        height: 120px;
+        color: rgb(244, 232, 7);
+        padding: 10px;
+       
+        font-weight: bold;
+        font-size: large;
+        cursor: pointer;
+      }
+
+      p {
+        color: #01000b;
+        font-size: 28px;
+        margin-top: 35px;
+        text-align: center;
+
+      }
+  
+  }
+  .div4 { grid-area: 3 / 2 / 4 / 3; 
+    background-color: none;
+
+  }
+  .div5 { grid-area: 1 / 3 / 4 / 4; 
+    background-color: none;
+
+  }
+  
+  }
+}
+
+

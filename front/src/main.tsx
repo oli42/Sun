@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import './App.scss'
 import './index.css'
-import Form from './Components/Form'
+import Home from './Pages/Home'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Form/>
+    <div>
+      <Home/>
+    </div>
   </React.StrictMode>,
 )
