@@ -1,23 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Sun from '../Components/Sun'
-
-
+import Result from '../Components/Result'
+import { ResultContext, myContext } from '../Context/myContext'
 
 
 export default function Home() {
 
-  return (
-    <div className='home'>
-      <div className='parent'>
-        <div className='div1'></div>
-        <div className='div2'></div>
 
-          <div className='div3'>
-            <Sun/>
-          </div>
-        <div className='div4'></div>
-        <div className='div5'></div>
-      </div>
-    </div>
+  const [resultState, setResultState] = useState({sunrise: '0', sunset: '0', day_length: '0'})
+  const resultContext = useContext(myContext)
+
+  return (
+    <myContext.Provider value={{resultState, setResultState}}>
+      <Sun/>
+      <Result/>
+    </myContext.Provider>
   )
 }

@@ -1,23 +1,31 @@
-import { useEffect, useState } from "react";
-import TheSun from '../utils/sounds/TheSun.mp3'
+import { useContext, useEffect, useState } from "react";
+import TheSun from '../sounds/TheSun.mp3'
 import { Howl } from "howler"
+// import Result from "./Result";
+import { ResultContext, myContext } from "../Context/myContext";
+import Result from "./Result";
 
 export default function Sun(props:any){
 
-    const [result, setResult] = useState({"results": {
-        "sunrise": "",
-        "sunset": "",
-        "first_light": "7:44:58 AM",
-        "last_light": "2:37:01 AM",
-        "dawn": "9:11:59 AM",
-        "dusk": "1:10:00 AM",
-        "solar_noon": "5:10:59 PM",
-        "golden_hour": "11:57:57 PM",
-        "day_length": "",
-        "timezone": "UTC"
-      }})
+
+
+    // const [result, setResult] = useState({"results": {
+    //     "sunrise": " ",
+    //     "sunset": " ",
+    //     "first_light": "7:44:58 AM",
+    //     "last_light": "2:37:01 AM",
+    //     "dawn": "9:11:59 AM",
+    //     "dusk": "1:10:00 AM",
+    //     "solar_noon": "5:10:59 PM",
+    //     "golden_hour": "11:57:57 PM",
+    //     "day_length": "",
+    //     "timezone": "UTC"
+    //   }})
+
     const [latitude, setLatitude] = useState(0)
     const [longitude, setLongitude] = useState(0)
+    const resultContext = useContext(myContext)
+    console.log('resultContext', resultContext)
 
     const playMp3 = (src: any) => {
         const sound = new Howl({
@@ -38,9 +46,13 @@ export default function Sun(props:any){
           }
   
           const result = await response.json();
-          setResult(result);
-          console.log('result', result);
+          console.log(result)
+          // setResult(result.results);
           playMp3(TheSun);
+          setTimeout(() =>{
+
+            resultContext?.setResultState(result.results)
+          }, 3000)
           
         }
 
@@ -56,18 +68,9 @@ export default function Sun(props:any){
     },[])
    
 
-
     return (
-        <div> 
-            <button  onClick={getData}>Here comes the sun... according to your location</button>
-                {result.results.sunrise != "" ?  
-            <div >
-                <p>sunrise: {result.results.sunrise}</p>
-                <p>sunset: {result.results.sunset}</p>
-                <p>day length: {result.results.day_length}</p>
-            </div>
-                : null}
-     
+        <div className="flower">
+            <button onClick={getData}></button>
         </div>
     )
 
