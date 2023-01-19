@@ -52,7 +52,7 @@ export default function Sun(props:any){
           setTimeout(() =>{
 
             resultContext?.setResultState(result.results)
-          }, 3000)
+          }, 1000)
           
         }
 
