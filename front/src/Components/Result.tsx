@@ -20,7 +20,16 @@ function Result() {
 
   return (
     <div>
-        {resultContext?.resultState.sunrise != "0" && (timer >= 1)?  
+
+        {resultContext?.resultState.sunrise != "0" && (timer >= 0)?  
+        <div>
+              <div className="hello">
+                    <p >Hello!</p>
+              </div>
+        </div>
+        : null
+        }     
+        {resultContext?.resultState.sunrise != "0" && (timer >= 2)?  
         <div>
               <div className="container">
                     <p >According to your location...</p>
@@ -28,7 +37,7 @@ function Result() {
         </div>
         : null
         }
-        {resultContext?.resultState.sunrise != "0" && (timer >= 3)?  
+        {resultContext?.resultState.sunrise != "0" && (timer >= 4)?  
         <div>
               <div className="result">
                     <p >Tomorrow the sun will rise at {resultContext?.resultState.sunrise}.</p>
@@ -36,7 +45,7 @@ function Result() {
         </div>
         : null
         }
-        {resultContext?.resultState.sunrise != "0" && timer >= 6 ?  
+        {resultContext?.resultState.sunrise != "0" && timer >= 7 ?  
         <div>
               <div className="set">
                     <p >And will set at {resultContext?.resultState.sunset}.</p>
